@@ -1,0 +1,16 @@
+{
+    "installCommand": "yarn install",
+    "regions": ["sin1"], 
+    "builds": [
+        {
+        "src": "/src/index.js",
+        "use": "@now/node"
+        }
+    ],
+    "routes": [
+        {
+        "src": "/(.*)",
+        "dest": "/src/index.js"
+        }
+    ]
+}
