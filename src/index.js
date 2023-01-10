@@ -22,5 +22,3 @@ server.listen(process.env.PORT || SERVER_PORT, async () => {
 
   console.log(`Server starts on http://localhost:${process.env.PORT || SERVER_PORT}`);
 });
-
-export default app;
