@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import cors from 'cors';
 import http from 'http';
+import axios from 'axios';
 
 import routes from './data/Routes';
 
@@ -19,6 +20,6 @@ const server = http.createServer(app);
 
 server.listen(process.env.PORT || SERVER_PORT, async () => {
   // Test.test();
-
+  axios.defaults.timeout = 20 * 1000; // 20 seconds
   console.log(`Server starts on http://localhost:${process.env.PORT || SERVER_PORT}`);
 });
