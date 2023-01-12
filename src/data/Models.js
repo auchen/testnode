@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
 
-const URI = 'mongodb+srv://test:test_mongo_test@test-ukjfp.mongodb.net/test?retryWrites=true&w=majority';
+import {NODE_ENV, DB_URI_PRO, DB_URI_DEV} from '../EnvConfig';
+import * as Cs from '../Constants';
 
 mongoose.set('strictQuery', true);
-mongoose.connect(process.env.MONGODB_URI || URI);
+mongoose.connect(process.env.MONGODB_URI || (process.env.NODE_ENV === Cs.ENV_PRO || NODE_ENV === Cs.ENV_PRO ? DB_URI_PRO : DB_URI_DEV));
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
