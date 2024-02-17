@@ -9,6 +9,7 @@ const routeItems = [
   {method: 'get', path: '/', controller: (req, res) => res.send('hello world')},
   {method: 'get', path: '/port', controller: (req, res) => res.send('Port: ' + process.env.PORT)},
   {method: 'get', path: '/env', controller: (req, res) => res.send('Env: ' + process.env.NODE_ENV)},
+  {method: 'get', path: '/dbi', controller: (req, res) => res.send('Env: ' + process.env.DBI)},
   // {method: 'get', path: '/mongo', controller: (req, res) => res.send('MONGODB_URI: ' + process.env.MONGODB_URI)},
   // {
   //   method: 'get',
