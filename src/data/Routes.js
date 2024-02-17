@@ -3,21 +3,21 @@ import express from 'express';
 import _ from 'lodash';
 import multer from 'multer';
 
-import {User} from './Models';
+// import {User} from './Models';
 
 const routeItems = [
   {method: 'get', path: '/', controller: (req, res) => res.send('hello world')},
   {method: 'get', path: '/port', controller: (req, res) => res.send('Port: ' + process.env.PORT)},
   {method: 'get', path: '/env', controller: (req, res) => res.send('Env: ' + process.env.NODE_ENV)},
-  {method: 'get', path: '/mongo', controller: (req, res) => res.send('MONGODB_URI: ' + process.env.MONGODB_URI)},
-  {
-    method: 'get',
-    path: '/users',
-    controller: async (req, res) => {
-      const user = await User.findOne({}).then(o => o);
-      res.send(JSON.stringify(user));
-    },
-  },
+  // {method: 'get', path: '/mongo', controller: (req, res) => res.send('MONGODB_URI: ' + process.env.MONGODB_URI)},
+  // {
+  //   method: 'get',
+  //   path: '/users',
+  //   controller: async (req, res) => {
+  //     const user = await User.findOne({}).then(o => o);
+  //     res.send(JSON.stringify(user));
+  //   },
+  // },
 ];
 
 const registerRoutes = ({router, items}) => {
